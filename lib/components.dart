@@ -86,14 +86,14 @@ Widget makePage({required int nums, required double stars}) {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  const SizedBox(height: 5),
+                  const SizedBox(height: 10),
                   starRating(stars),
-                  const SizedBox(height: 15),
+                  const SizedBox(height: 20),
                   Text(
                     "Some review type thing about some place and why you should visit it. Here are a few things you shoud keep in mind about this place. Also this place is the best place of this country",
                     style: TextStyle(
-                      fontSize: 17,
-                      color: textColor.withOpacity(0.8),
+                      fontSize: 16,
+                      color: textColor.withOpacity(0.7),
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -109,6 +109,7 @@ Widget makePage({required int nums, required double stars}) {
 
 Widget starRating(double stars) {
   List<Widget> starList = [];
+  int starsInt;
 
   for (int i = 0; i < stars.floor(); i++) {
     starList.add(
@@ -133,9 +134,9 @@ Widget starRating(double stars) {
         ),
       ),
     );
-    stars = stars.ceilToDouble();
   }
-  for (int i = 0; i < 5 - stars.floor(); i++) {
+  starsInt = stars.ceil();
+  for (int i = 0; i < 5 - starsInt; i++) {
     starList.add(
       const Padding(
         padding: EdgeInsets.only(right: 3.0),
@@ -147,8 +148,17 @@ Widget starRating(double stars) {
       ),
     );
   }
+  starList.add(
+    Text(
+      "$stars",
+      style: const TextStyle(
+        fontSize: 14,
+        color: Colors.grey,
+      ),
+    ),
+  );
   return Row(
-    crossAxisAlignment: CrossAxisAlignment.start,
+    crossAxisAlignment: CrossAxisAlignment.end,
     children: starList,
   );
 }
