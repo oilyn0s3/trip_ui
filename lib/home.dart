@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'components.dart';
+
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -10,12 +12,12 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   late PageController _pageController;
   void _onScroll() {
-    print("Scroll");
+    // print("Scroll");
   }
 
   @override
   void initState() {
-    _pageController = PageController(initialPage: 1)..addListener(_onScroll);
+    _pageController = PageController(initialPage: 0)..addListener(_onScroll);
     super.initState();
   }
 
@@ -25,9 +27,10 @@ class _HomeState extends State<Home> {
       body: PageView(
         controller: _pageController,
         children: [
-          Container(color: Colors.cyan),
-          Container(color: Colors.pink),
-          Container(color: Colors.amber),
+          makePage(nums: 1, stars: 3.7),
+          makePage(nums: 2, stars: 4.5),
+          makePage(nums: 3, stars: 3),
+          makePage(nums: 4, stars: 5),
         ],
       ),
     );
