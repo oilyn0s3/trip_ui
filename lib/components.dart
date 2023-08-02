@@ -51,7 +51,7 @@ Widget makePage({required int nums, required double stars}) {
                   "/4",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 22,
+                    fontSize: 20,
                     shadows: [
                       Shadow(
                         color: Colors.black.withOpacity(0.5),
@@ -97,6 +97,7 @@ Widget makePage({required int nums, required double stars}) {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
+                  const SizedBox(height: 20),
                 ],
               ),
             )
@@ -149,11 +150,14 @@ Widget starRating(double stars) {
     );
   }
   starList.add(
-    Text(
-      "$stars",
-      style: const TextStyle(
-        fontSize: 14,
-        color: Colors.grey,
+    Padding(
+      padding: const EdgeInsets.only(bottom: 1.0),
+      child: Text(
+        "$stars",
+        style: const TextStyle(
+          fontSize: 16,
+          color: Colors.grey,
+        ),
       ),
     ),
   );

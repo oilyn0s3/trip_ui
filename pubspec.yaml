@@ -9,7 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  simple_animations: ^5.0.2
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
