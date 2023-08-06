@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trip_ui/page_maker.dart';
 
 import 'components.dart';
 
@@ -26,11 +27,11 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: PageView(
         controller: _pageController,
-        children: [
-          makePage(nums: 1, stars: 3.7),
-          makePage(nums: 2, stars: 4.5),
-          makePage(nums: 3, stars: 3),
-          makePage(nums: 4, stars: 5),
+        children: const [
+          PageMaker(nums: 1, stars: 3.7),
+          PageMaker(nums: 2, stars: 4.5),
+          PageMaker(nums: 3, stars: 3),
+          PageMaker(nums: 4, stars: 5),
         ],
       ),
     );
